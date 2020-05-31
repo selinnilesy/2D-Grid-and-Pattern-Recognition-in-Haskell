@@ -81,7 +81,7 @@ matches2d grid pattern =
     matches2dRight grid = 
         let rightGrids = take (n-q+1) $ iterate (map tail) grid 
             matches = map topLeftMatches rightGrids
-            indices = map fst $ filter snd $ enumerate matches --fst derives the first and snd gets the second item
+            indices = map fst $ filter snd $ enumerate matches  --fst derives the first and snd gets the second item
          in indices 
     topLeftMatches g = and $ zipWith (\r1 r2 -> and $ zipWith (==) r1 r2) g pattern
     
